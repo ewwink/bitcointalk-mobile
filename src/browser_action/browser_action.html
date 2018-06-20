@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bitcointalk Mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+</head>
+
+<body>
+
+    <div id="mainPopup">
+        <h1>Bitcointalk Mobile</h1>
+        <div class="wrap">
+            <p>Forum Font size:
+                <strong>
+                    <span id="fontSizeValue">13</span>px</strong>
+                <span id="status"></span>
+            </p>
+            <p>
+                <input type="range" min="7" max="50" value="13" class="slider" id="fontSize">
+            </p>
+            <p>
+                <button id="save">Save</button>
+                <button id="reset">Reset</button>
+            </p>
+            <hr>
+            <h2>Buy Me Coffee</h2>
+            <p><strong>BTC</strong>:
+                <br><span class="addr">16Q8MPkNoxY3Yc18dmUxcFCLqs2GSJUXsH</span>
+            </p>
+            <p><strong>ETH/Token:</strong>
+                <br><span class="addr">0xd40a4Be8603f3A5eeB66047cddE150cBc59586e9</span>
+            </p>
+            <hr>
+            <p>Or <a href="https://bitcointalk.org/index.php?action=merit;msg=40504389">support me on forum</a></p>
+            <p id="copyStatus"></p>
+        </div>
+    </div>
+    <script src="browser_action.js"></script>
+    <script src="../options/options.js"></script>
+</body>
+
+</html>
