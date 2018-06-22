@@ -20,7 +20,11 @@ img {
   border: 1px solid #aaa;
   /*padding: 2px !important*/
 }
-.tborder .bordercolor .windowbg2 {border-top: none;}
+
+.tborder .bordercolor .windowbg2 {
+  border-top: none;
+}
+
 .windowbg p, .windowbg2 p, .windowbg3 p {
   margin: 2px 0;
 }
@@ -61,11 +65,10 @@ table.titlebg2 {
 }
 
 .bordercolor {
-  background-color: #E5E5E8 !important;
   table-layout: fixed
 }
 
-.bordercolor tr{
+.bordercolor tr {
   width: 99%;
   display: block;
 }
@@ -148,14 +151,25 @@ textarea.editor, input[name="subject"] {
 #searchform td {
   display: block
 }
+
 #searchform fieldset {
   width: auto
 }
-#searchform td:nth-child(3) b{
+
+#searchform td:nth-child(3) b {
   display: none
 }
-#frmLogin table, #creator table{table-layout:fixed;width:99%}
-#frmLogin td, #creator td{display:block;text-align:left}
+
+#frmLogin table, #creator table {
+  table-layout: fixed;
+  width: 99%
+}
+
+#frmLogin td, #creator td {
+  display: block;
+  text-align: left
+}
+
 .topicList td {
   display: none
 }
@@ -167,10 +181,46 @@ textarea.editor, input[name="subject"] {
 .signature td {
   word-break: break-all
 }
-#modifyProfile > td {display: block;}
-#modifyProfile > td, #modifyProfile > td > table {width:99%;}
-#modifyProfile .titlebg td:nth-child(2), #modifyProfile .windowbg:nth-child(2) {display: none;}
-#modifyProfile br{display: inherit !important}
-#modifyProfile .smalltext{height: auto;}
-.newtxt{font-size: inherit !important}
-.dummyPost{display: none !important;}
+
+#modifyProfile>td {
+  display: block;
+}
+
+#modifyProfile>td, #modifyProfile>td>table {
+  width: 99%;
+}
+
+#modifyProfile .titlebg td:nth-child(2), #modifyProfile .windowbg:nth-child(2) {
+  display: none;
+}
+
+#modifyProfile br {
+  display: inherit !important
+}
+
+#modifyProfile .smalltext {
+  height: auto;
+}
+
+.newtxt {
+  font-size: inherit !important
+}
+
+.dummyPost {
+  display: none !important;
+}
+
+#ajax_in_progress {
+  display: block !important;
+  width: 100%;
+  z-index: 999;
+  background-color: #fff !important;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.maintab_last {
+	display: none;
+}

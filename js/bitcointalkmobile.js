@@ -1,4 +1,13 @@
 /*jshint esversion: 6 */
+/*
+*
+* Bitcointalk Mobile
+* Firefox Addon for Android to make bitcointalk.org mobile friendly
+* by fahbil https://bitcointalk.org/index.php?action=profile;u=1898722
+* Support Thread: https://bitcointalk.org/index.php?topic=4507293.0
+* Source Code: https://github.com/ewwink/bitcointalk-mobile
+*
+*/
 
 (function () {
   function appendCSS(txt) {
@@ -8,7 +17,12 @@
     css.textContent = txt;
     head.appendChild(css);
   }
-
+  function removeBG() {
+    setTimeout(function () {
+      if (document.getElementById('ajax_in_progress'))
+        document.getElementById('ajax_in_progress').remove();
+    }, 200);
+  }
   var byId = function (id) { return document.getElementById(id); };
   var listPages = ['/$', '/index.php$', '\\?board='],
     currentURL = window.location.href,
@@ -19,10 +33,25 @@
   viewPortTag.content = "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5";
   document.getElementsByTagName('head')[0].appendChild(viewPortTag);
 
-  chrome.storage.local.get('fontSize', function (items) {
-    fontSize = items.fontSize !== undefined ? items.fontSize : '13';
-    cssStyle = 'body, td, th, tr, .post {font-size: ' + fontSize + 'px !important}';
-    appendCSS(cssStyle);
+  chrome.storage.local.get('bctMobile', function (items) {
+    if (items.bctMobile !== undefined) {
+      fontSize = items.bctMobile.fontSize !== undefined ? items.bctMobile.fontSize : '13';
+      cssStyle = 'body, td, th, tr, .post {font-size: ' + fontSize + 'px !important}';
+      appendCSS(cssStyle);
+      if (items.bctMobile.nightMode) {
+        cssStyle = '.bordercolor{background-color: #2d2b2b !important;}';
+      }
+      else {
+        cssStyle = '.bordercolor{background-color: #E5E5E8 !important;}';
+      }
+      appendCSS(cssStyle);
+    }
+    else {
+      cssStyle = 'body, td, th, tr, .post {font-size: 13px !important}';
+      appendCSS(cssStyle);
+      cssStyle = '.bordercolor{background-color: #E5E5E8 !important;}';
+      appendCSS(cssStyle);
+    }
   });
   // Top menu
   var topMenu = document.getElementsByClassName('maintab_first')[0].parentNode.parentNode.parentNode;
@@ -34,6 +63,7 @@
     if (tbl[1].textContent.indexOf('Modify Profile')) {
       tbl[1].parentNode.parentNode.id = 'modifyProfile';
     }
+    removeBG();
     return;
   }
 
@@ -100,7 +130,7 @@
     }
   }
   catch (err) { }
-
+  removeBG();
 })();
 
 

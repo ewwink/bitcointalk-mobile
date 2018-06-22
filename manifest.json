@@ -1,7 +1,7 @@
 {
   "name": "Bitcointalk Mobile",
   "short_name" : "BCTmobile",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "manifest_version": 2,
   "description": "Make bitcointalk.org mobile friendly, no server processing all done locally with custom CSS and Javascript",
   "homepage_url": "https://github.com/ewwink/bitcointalk-mobile",
@@ -29,6 +29,7 @@
     {
       "matches": ["https://bitcointalk.org/*"],
       "css": ["css/bitcointalk.org.css"],
+      "js" : ["js/night-mode.js"],
       "run_at" : "document_start"
     },
     {
